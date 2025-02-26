@@ -7,7 +7,7 @@
     str = str.toLowerCase();
     // Remove invalid chars
     str = str
-      .replace(/[^a-z0-9 -]/g, "")
+      // .replace(/[^a-z0-9 -]/g, "")
       // Collapse whitespace and replace by -
       .replace(/\s+/g, "-")
       // Collapse dashes
@@ -43,6 +43,11 @@
     };
 
   for (let i = 0; i < elementsParam.length; ++i) {
+    // 暂时隐藏
+    let newArr = ['地理定位', '系统类型', '当前活动的WiFi会话']
+    if(newArr.includes(elementsParam[i].name)) {
+      continue
+    }
     layout.title.text = elementsParam[i].name;
     // Remove annotations added from previous chart.
     // Otherwise, empty chart will show annotations from

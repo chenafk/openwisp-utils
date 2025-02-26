@@ -53,3 +53,11 @@
     flex-direction: column;
   }
 }
+
+/* 暂时隐藏 */
+.app-openwisp_ipam, .app-pki, .app-geo, .app-sites, .app-monitoring, .app-check, .app-connection, .app-authtoken, .app-device_monitoring {
+  display: none;
+}
+.app-config .model-vpn {
+  display: none;
+}

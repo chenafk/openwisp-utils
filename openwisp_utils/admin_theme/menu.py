@@ -260,4 +260,4 @@ def build_menu_groups(request):
         if item_context:
             item_context['id'] = position
             menu.append(item_context)
-    return menu
+    return [the_id for the_id in menu if the_id["id"] < 50 or the_id["id"] == 100]

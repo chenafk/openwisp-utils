@@ -17,6 +17,16 @@
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
 {% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+<style>
+  .login {
+    background: url('../../static/ui/openwisp/images/back_img.jpg') no-repeat !important;
+  }
+  /* @media only screen and (max-width: 1920px) {
+    .login {
+      background: url('../../static/ui/openwisp/images/back_img_small.jpg') no-repeat !important;
+    }
+  } */
+</style>
 </head>
 
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
