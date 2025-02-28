@@ -44,7 +44,7 @@
 
   for (let i = 0; i < elementsParam.length; ++i) {
     // 暂时隐藏
-    let newArr = ['地理定位', '系统类型', '当前活动的WiFi会话']
+    let newArr = ['Geographic positioning', 'System type', 'Currently Active WiFi Sessions', '地理定位', '系统类型', '当前活动的WiFi会话']
     if(newArr.includes(elementsParam[i].name)) {
       continue
     }

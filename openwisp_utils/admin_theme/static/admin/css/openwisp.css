@@ -726,8 +726,6 @@ input[type='button']:hover,
 }
 .no-auth #site-name a {
   margin-left: 2.5rem;
-  width: 150px;
-  height: 86px;
   background: url(../../../static/ui/openwisp/images/comfast_logo.png)
   no-repeat scroll 0 50%/100%;
 }
@@ -1447,10 +1445,9 @@ body.login {
   display: block;
 }
 .login #site-name a {
-  width: 184px;
   text-indent: -2000px;
   height: auto;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 .login #site-name span {
   display: flex !important;
@@ -1748,11 +1745,15 @@ body::-webkit-scrollbar {
     height: 413px !important;
     background: url('../../../static/ui/openwisp/images/phone_back_limg.png') no-repeat !important;
   }
-  .login #site-name a {
-    margin: 20px auto;
-  }
   .login #main #content {
     padding: 0 50px 10px;
+  }
+  .login #main .form-row, .login_btn {
+    margin-top: 0;
+  }
+  .no-auth #site-name a {
+    width: 100px;
+    height: 85px;
   }
 }
 /* 暂时隐藏 */
