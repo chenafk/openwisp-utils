@@ -55,7 +55,7 @@
 }
 
 /* 暂时隐藏 */
-.app-openwisp_ipam, .app-pki, .app-geo, .app-sites, .app-monitoring, .app-check, .app-connection, .app-authtoken, .app-device_monitoring {
+.app-openwisp_ipam, .app-pki, .app-geo, .app-sites, .app-monitoring, .app-check, .app-connection, .app-authtoken, .app-device_monitoring, .app-openwisp_radius, .app-topology, .app-socialaccount {
   display: none;
 }
 .app-config .model-vpn {

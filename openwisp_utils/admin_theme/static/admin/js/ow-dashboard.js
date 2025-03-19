@@ -14,30 +14,36 @@
       .replace(/-+/g, "-");
     return str;
   }
+  function isMobileDevice() {
+    const isMobileUA = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+    const isSmallScreen = window.innerWidth <= 768;
+    const isTouch = 'ontouchstart' in window;
+    return isMobileUA || isSmallScreen || isTouch;
+  }
 
   let elementsParam = Object.values(owDashboardCharts),
     container = document.getElementById("plot-container");
 
   const layout = {
-      height: 450,
-      width: 450,
-      margin: {
-        t: 0,
-        b: 0,
-      },
-      legend: {
-        yanchor: "center",
-        xanchor: "left",
-        x: 0,
-        y: 0,
-        bgcolor: "transparent",
-      },
-      title: {
-        yanchor: "center",
-        y: 0.92,
-        font: { size: 20 },
-      },
+    height: isMobileDevice() ? 300 : 350,
+    width: isMobileDevice() ? 300 : 350,
+    margin: {
+      t: 0,
+      b: 0,
     },
+    legend: {
+      yanchor: "center",
+      xanchor: "left",
+      x: 0,
+      y: 0,
+      bgcolor: "transparent",
+    },
+    title: {
+      yanchor: "center",
+      y: 0.92,
+      font: { size: 20 },
+    },
+  },
     options = {
       displayModeBar: false,
     };
@@ -45,7 +51,7 @@
   for (let i = 0; i < elementsParam.length; ++i) {
     // 暂时隐藏
     let newArr = ['Geographic positioning', 'System type', 'Currently Active WiFi Sessions', '地理定位', '系统类型', '当前活动的WiFi会话']
-    if(newArr.includes(elementsParam[i].name)) {
+    if (newArr.includes(elementsParam[i].name)) {
       continue
     }
     layout.title.text = elementsParam[i].name;
@@ -54,10 +60,10 @@
     // the previous chart.
     delete layout.annotations;
     let data = {
-        type: "pie",
-        hole: 0.6,
-        showlegend: !elementsParam[i].hasOwnProperty("quick_link"),
-      },
+      type: "pie",
+      hole: 0.6,
+      showlegend: !elementsParam[i].hasOwnProperty("quick_link"),
+    },
       element = document.createElement("div"),
       totalValues = 0;
 
